@@ -6,20 +6,27 @@ function Survey() {
         <div
             className={'flex flex-col items-center'}
         >
-            <LinkButton to={''} word={'Back'} classes={'absolute left-0 top-0'}/>
+            <LinkButton
+                to={''}
+                text={'Back'}
+                classes={'absolute left-0 top-0'}
+            />
             <h1>Survey</h1>
             <p>The following will ask you questions... Answer them</p>
 
             <SurveyQuestion
                 props={{
+                    'number': 1,
+                    'type': 'radio',
                     'question': 'What is your favorite color?',
                     'answers' : [
-                        'Cunt',
-                        'fuck',
-                        'balls'
+                        'answer1',
+                        'answer2',
+                        'answer3',
+                        'answer4'
                     ]
                 }}
-            ></SurveyQuestion>
+            />
         </div>
     );
 }
