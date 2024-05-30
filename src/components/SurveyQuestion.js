@@ -2,8 +2,7 @@ import OptionRadio from "./OptionRadio";
 import OptionCheck from "./OptionCheck";
 import OptionSlider from "./OptionSlider";
 
-function SurveyQuestion(props) {
-    props = props.props;
+function SurveyQuestion({props, number}) {
 
     /* types of SurveyQuestions:
         1) 'radio' -> radio buttons, multiple choice, >1 options
@@ -21,7 +20,7 @@ function SurveyQuestion(props) {
                         props.answers.map((answer, index) => (
                             <OptionRadio
                                 text={answer}
-                                name={props.number}
+                                name={number}
                                 key={index}
                             />
                         ))
@@ -33,7 +32,7 @@ function SurveyQuestion(props) {
                         props.answers.map((answer, index) => (
                             <OptionCheck
                                 text={answer}
-                                name={props.number}
+                                name={number}
                                 key={index}
                             />
                         ))
@@ -49,15 +48,16 @@ function SurveyQuestion(props) {
                 )
 
             default:
-                console.log(`error on question #${props.number}`);
+                console.log(`error on question #${number}`);
                 return null;
         }
     }
 
     return (
         <div
-            className={'flex flex-col items-center bg-black/20 rounded-3xl w-1/2 min-w-[600px] py-4 my-4'}
+            className={'relative flex flex-col items-center bg-black/20 rounded-3xl w-1/2 min-w-[600px] py-4 my-4'}
         >
+            <p className={'absolute top-0 left-0 m-4 font-bold'}>{`Question: ${number+1}`}</p>
             <h1 className={'mt-0'}>{props.question}</h1>
             <div
                 className={'flex flex-col items-center justify-center '}
