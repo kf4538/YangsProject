@@ -9,7 +9,7 @@ function Survey() {
             <LinkButton
                 to={''}
                 text={'Back'}
-                classes={'absolute left-0 top-0'}
+                classes={'fixed left-0 top-0'}
             />
             <h1>Survey</h1>
             <p>The following will ask you questions... Answer them</p>
@@ -25,6 +25,27 @@ function Survey() {
                         'answer3',
                         'answer4'
                     ]
+                }}
+            />
+            <SurveyQuestion
+                props={{
+                    'number': 2,
+                    'type': 'check',
+                    'question': 'Check Box Question!',
+                    'answers' : [
+                        'answer5',
+                        'answer6',
+                        'answer7',
+                        'answer8'
+                    ]
+                }}
+            />
+            <SurveyQuestion
+                props={{
+                    'number': 3,
+                    'type': 'slider',
+                    'question': 'Slider Question!',
+                    'name': 'fart'
                 }}
             />
         </div>
