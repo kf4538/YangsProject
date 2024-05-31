@@ -51,7 +51,10 @@ function Survey({questions, nextPage}) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form
+            className={'flex flex-col items-center'}
+            onSubmit={handleSubmit}
+        >
             {
                 questions.map((question, index) => (
                     <SurveyQuestion
@@ -61,7 +64,12 @@ function Survey({questions, nextPage}) {
                     />
                 ))
             }
-            <button type="submit">Submit</button>
+            <button
+                className={'aspect-[5/2] w-1/2 text-3xl font-bold bg-white hover:bg-gray-200 transition-all border-none rounded-3xl cursor-pointer'}
+                type="submit"
+            >
+                Submit
+            </button>
         </form>
     );
 }
