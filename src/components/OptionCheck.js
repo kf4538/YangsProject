@@ -1,7 +1,11 @@
-function OptionRadio({text, name}) {
+function OptionRadio({text, questionNumber, id}) {
     return (
         <div className={'flex flex-row bg-black/10 gap-2 px-4 rounded-lg my-1'}>
-            <input type={'checkbox'} name={`q${name}`}/>
+            <input
+                type={'checkbox'}
+                name={questionNumber}
+                value={`q${id[0]}-a${id[1]}`}
+            />
             <p>{text}</p>
         </div>
     );

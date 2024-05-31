@@ -1,34 +1,18 @@
 import LinkButton from "../components/LinkButton";
 import SurveyQuestion from "../components/SurveyQuestion";
 
-function Survey() {
-    const allQuestions = [
-        {
-            'type': 'radio',
-            'question': 'What is your favorite color?',
-            'answers' : [
-                'answer1',
-                'answer2',
-                'answer3',
-                'answer4'
-            ]
-        },
-        {
-            'type': 'check',
-            'question': 'Check Box Question!',
-            'answers' : [
-                'answer5',
-                'answer6',
-                'answer7',
-                'answer8'
-            ]
-        },
-        {
-            'type': 'slider',
-            'question': 'Slider Question!',
-            'name': 'fart'
+function Survey({questions}) {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+
+        for (const [key, value] of formData) {
+            console.log(`${key}: ${value}`);
         }
-    ];
+
+        // sendInputValueToApi(inputValue).then(() => /* Do something */)
+    };
 
     return (
         <div
@@ -41,11 +25,21 @@ function Survey() {
             />
             <h1>Survey</h1>
             <p>The following will ask you questions... Answer them</p>
-            {
-                allQuestions.map((question, index) => (
-                    <SurveyQuestion props={question} number={index} />
-                ))
-            }
+
+            <form onSubmit={handleSubmit}>
+                {
+                    questions.map((question, index) => (
+                        <SurveyQuestion
+                            questionData={question}
+                            questionNumber={index+1}
+                            key={index+1}
+                        />
+                    ))
+                }
+                <button type="submit">Submit</button>
+            </form>
+
+            <p>the bottom!</p>
         </div>
     );
 }

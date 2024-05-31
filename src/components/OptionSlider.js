@@ -5,11 +5,12 @@ function OptionRadio({text, name}) {
         <div className={'bg-black/10 gap-2 px-4 rounded-lg my-1'}>
             <input
                 type={'range'}
-                name={`q${name}`}
+                name={name}
                 min={'0'}
                 max={'10'}
                 step={'1'}
                 list={'markers'}
+                id={'0'}
             />
             <datalist
                 id="markers"

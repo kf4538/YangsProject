@@ -1,6 +1,5 @@
 // import './Home.css'
 
-import {Link} from "react-router-dom";
 import LinkButton from "../components/LinkButton";
 
 function Home() {
@@ -12,7 +11,7 @@ function Home() {
 
             <LinkButton
                 to={'survey'}
-                word={'Begin'}
+                text={'Begin'}
             />
         </div>
     );
