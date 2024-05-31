@@ -19,7 +19,7 @@ function SurveyQuestion({questionData, questionNumber}) {
                             <OptionRadio
                                 text={answer}
                                 questionNumber={questionNumber}
-                                id={[questionNumber, index+1]}
+                                value={index+1}
                                 key={index}
                             />
                         ))
@@ -32,7 +32,7 @@ function SurveyQuestion({questionData, questionNumber}) {
                             <OptionCheck
                                 text={answer}
                                 questionNumber={questionNumber}
-                                id={[questionNumber, index+1]}
+                                value={index+1}
                                 key={index}
                             />
                         ))

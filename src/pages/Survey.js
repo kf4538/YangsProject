@@ -6,12 +6,14 @@ function Survey({questions}) {
         event.preventDefault();
 
         const formData = new FormData(event.target);
+        const correctAnswers = {};
 
         for (const [key, value] of formData) {
-            console.log(`${key}: ${value}`);
+            correctAnswers[key] === undefined ? correctAnswers[key] = [value] : correctAnswers[key].push(value);
         }
 
-        // sendInputValueToApi(inputValue).then(() => /* Do something */)
+        console.log(correctAnswers);
+        // export correctAnswers object however you see fit.
     };
 
     return (
