@@ -1,7 +1,14 @@
-import LinkButton from "../components/LinkButton";
-import SurveyQuestion from "../components/SurveyQuestion";
+import SurveyQuestion from "./SurveyQuestion";
+import {useActionData, useNavigate} from "react-router-dom";
 
-function Survey({questions}) {
+function Survey({questions, nextPage}) {
+    const navigate = useNavigate();
+
+    const navigateToNewPage = () => {
+        // use the navigate function to navigate to /new-page
+        navigate(`/${nextPage}`);
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -38,35 +45,24 @@ function Survey({questions}) {
         console.log(parsedObject);
         // sendToDatabase(parsedObject);
         // export correctAnswers object however we see fit.
+
+        //Route to next page
+        navigateToNewPage();
     };
 
-        return (
-        <div
-            className={'flex flex-col items-center'}
-        >
-            <LinkButton
-                to={''}
-                text={'Back'}
-                classes={'fixed left-0 top-0'}
-            />
-            <h1>Survey</h1>
-            <p>The following will ask you questions... Answer them</p>
-
-            <form onSubmit={handleSubmit}>
-                {
-                    questions.map((question, index) => (
-                        <SurveyQuestion
-                            questionData={question}
-                            questionNumber={index+1}
-                            key={index+1}
-                        />
-                    ))
-                }
-                <button type="submit">Submit</button>
-            </form>
-
-            <p>the bottom!</p>
-        </div>
+    return (
+        <form onSubmit={handleSubmit}>
+            {
+                questions.map((question, index) => (
+                    <SurveyQuestion
+                        questionData={question}
+                        questionNumber={index+1}
+                        key={index+1}
+                    />
+                ))
+            }
+            <button type="submit">Submit</button>
+        </form>
     );
 }
 

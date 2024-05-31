@@ -10,7 +10,7 @@ function Home() {
             <h4>Click to begin!</h4>
 
             <LinkButton
-                to={'survey'}
+                to={'pre-survey'}
                 text={'Begin'}
             />
         </div>
