@@ -4,7 +4,7 @@ function OptionRadio({text, questionNumber, value}) {
             <input
                 type={'checkbox'}
                 name={questionNumber}
-                value={value}
+                value={text}
             />
             <p>{text}</p>
         </div>

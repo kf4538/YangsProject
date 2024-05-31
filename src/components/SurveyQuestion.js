@@ -46,7 +46,7 @@ function SurveyQuestion({questionData, questionNumber}) {
                             id={questionNumber}
                         />
                     }</>
-                )
+                );
 
             default:
                 console.log(`error on question #${questionNumber}`);

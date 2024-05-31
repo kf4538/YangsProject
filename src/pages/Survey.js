@@ -8,15 +8,39 @@ function Survey({questions}) {
         const formData = new FormData(event.target);
         const correctAnswers = {};
 
+        // parsing correct answer object.
         for (const [key, value] of formData) {
             correctAnswers[key] === undefined ? correctAnswers[key] = [value] : correctAnswers[key].push(value);
         }
 
-        console.log(correctAnswers);
-        // export correctAnswers object however you see fit.
+        // map correct answers (values) to an array
+        let answerArray = [];
+        for (let key of Object.keys(correctAnswers)) {
+            answerArray.push(correctAnswers[key]);
+        }
+
+        // console.log(answerArray);
+        // console.log(correctAnswers);
+        // console.log(questions);
+
+        if (answerArray.length !== questions.length) {
+            alert('Not all questions answered!');
+            return;
+        }
+
+        const parsedObject = {};
+        for (let i = 0; i < questions.length; i++) {
+            const question = questions[i];
+
+            parsedObject[question.question] = answerArray[i];
+        }
+
+        console.log(parsedObject);
+        // sendToDatabase(parsedObject);
+        // export correctAnswers object however we see fit.
     };
 
-    return (
+        return (
         <div
             className={'flex flex-col items-center'}
         >
