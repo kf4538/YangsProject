@@ -29,7 +29,16 @@ function App() {
         {
             'type': 'slider',
             'question': 'Slider Question!',
-            'name': 'fart'
+        },
+        {
+            'type': 'check',
+            'question': 'will you?',
+            'answers' : [
+                'answer5',
+                'answer6',
+                'answer7',
+                'answer8'
+            ]
         }
     ];
 

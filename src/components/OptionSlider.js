@@ -1,11 +1,11 @@
 import '../stylesheets/OptionSlider.css'
 
-function OptionRadio({text, name}) {
+function OptionRadio({text, questionNumber}) {
     return (
         <div className={'bg-black/10 gap-2 px-4 rounded-lg my-1'}>
             <input
                 type={'range'}
-                name={name}
+                name={questionNumber}
                 min={'0'}
                 max={'10'}
                 step={'1'}

@@ -42,7 +42,7 @@ function SurveyQuestion({questionData, questionNumber}) {
                 return (
                     <>{
                         <OptionSlider
-                            name={questionData.name}
+                            questionNumber={questionNumber}
                             id={questionNumber}
                         />
                     }</>
@@ -58,7 +58,7 @@ function SurveyQuestion({questionData, questionNumber}) {
         <div
             className={'relative flex flex-col items-center bg-black/20 rounded-3xl w-1/2 min-w-[600px] py-4 my-4'}
         >
-            <p className={'absolute top-0 left-0 m-4 font-bold'}>
+            <p className={'absolute bottom-0 left-0 m-4 font-bold'}>
                 {`Question: ${questionNumber}`}
             </p>
             <h1 className={'mt-0'}>
