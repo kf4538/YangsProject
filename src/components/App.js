@@ -1,5 +1,4 @@
 import Home from '../pages/Home';
-import Survey from './Survey';
 
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import PreSurvey from "../pages/PreSurvey";

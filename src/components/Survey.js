@@ -1,5 +1,5 @@
 import SurveyQuestion from "./SurveyQuestion";
-import {useActionData, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function Survey({questions, nextPage}) {
     const navigate = useNavigate();
