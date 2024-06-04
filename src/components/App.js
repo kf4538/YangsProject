@@ -51,7 +51,6 @@ function App() {
                 <Route path="/pre-survey" element={<PreSurvey questions={allQuestions} />} />
                 <Route path="/game" element={<Game />} />
                 <Route path="/post-survey" element={<PostSurvey questions={allQuestions} />} />
-
             </Routes>
         </Router>
     );
