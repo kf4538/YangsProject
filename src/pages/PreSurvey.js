@@ -14,7 +14,7 @@ function PreSurvey({questions}) {
             <h1>Survey</h1>
             <p>The following will ask you questions... Answer them</p>
 
-            <Survey questions={questions} nextPage={'game'}/>
+            <Survey questions={questions} nextPage={'choose-avatar'}/>
 
             <p>the bottom!</p>
         </div>

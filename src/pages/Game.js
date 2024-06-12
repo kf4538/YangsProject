@@ -5,7 +5,7 @@ function Game() {
         <>
             <LinkButton
                 to={'post-survey'}
-                text={'To the post survey!'}
+                text={'Now onto the post survey!'}
                 classes={'fixed left-0 top-0'}
             />
         </>
