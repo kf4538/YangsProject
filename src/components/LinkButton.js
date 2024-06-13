@@ -10,7 +10,7 @@ function LinkButton({to, text, classes}) {
     return (
         <Link
             to={`/${to}`}
-            className={`no-underline m-2 p-4 bg-white hover:bg-gray-200 transition-all rounded-lg ${classes}`}
+            className={`no-underline m-2 p-4 bg-white hover:bg-gray-200 transition-all rounded-lg z-10 ${classes}`}
         >
             <h1 className={'m-0 p-0 text-black'}>{text}</h1>
         </Link>

@@ -56,12 +56,12 @@ function SurveyQuestion({questionData, questionNumber}) {
 
     return (
         <div
-            className={'relative flex flex-col items-center bg-black/20 rounded-3xl w-1/2 min-w-[600px] py-4 my-4'}
+            className={'relative flex flex-col items-center bg-black/20 rounded-3xl w-[90%] max-w-[700px] p-4 my-4'}
         >
             <p className={'absolute bottom-0 left-0 m-4 font-bold'}>
                 {`Question: ${questionNumber}`}
             </p>
-            <h1 className={'mt-0'}>
+            <h1 className={'mt-0 text-center'}>
                 {questionData.question}
             </h1>
             <div className={'flex flex-col items-center justify-center '}>

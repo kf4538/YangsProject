@@ -25,14 +25,18 @@ function Avatar() {
 
         <h1>Choose your Avatar!</h1>
 
-        {avatars.map((avatar) => (
-            <ImageOption
-                key={avatar.src}
-                src={avatar.src}
-                onClick={handleAvatarChosen}
-                isSelected={selectedAvatar === avatar.src}
-            />
-        ))}
+        <div className={'flex flex-row flex-wrap'}>
+            {
+                avatars.map((avatar) => (
+                    <ImageOption
+                        key={avatar.src}
+                        src={avatar.src}
+                        onClick={handleAvatarChosen}
+                        isSelected={selectedAvatar === avatar.src}
+                    />))
+            }
+        </div>
+
 
         <LinkButton
             to={'game'}

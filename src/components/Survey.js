@@ -52,7 +52,7 @@ function Survey({questions, nextPage}) {
 
     return (
         <form
-            className={'flex flex-col items-center'}
+            className={'flex flex-col items-center w-full'}
             onSubmit={handleSubmit}
         >
             {
@@ -65,7 +65,7 @@ function Survey({questions, nextPage}) {
                 ))
             }
             <button
-                className={'aspect-[5/2] w-1/2 text-3xl font-bold bg-white hover:bg-gray-200 transition-all border-none rounded-3xl cursor-pointer'}
+                className={'aspect-[5/2] p-4 text-3xl font-bold bg-white hover:bg-gray-200 transition-all border-none rounded-3xl cursor-pointer'}
                 type="submit"
             >
                 Submit
