@@ -6,7 +6,8 @@ function Game() {
         <div
             className={'flex flex-col items-center'}
         >
-            <Circle backgroundColor={'red'}/>
+            <Circle x={50} y={10} backgroundColor={'red'}/>
+            
             <LinkButton
                 to={'post-survey'}
                 text={'Now onto the post survey!'}

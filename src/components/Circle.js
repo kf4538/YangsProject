@@ -1,9 +1,12 @@
-const Circle = ({backgroundColor}) => {
+const Circle = ({x, y, backgroundColor}) => {
     return(
         <div
             className="circle"
             style={{
-                backgroundColor: backgroundColor
+                backgroundColor: backgroundColor,
+                top: `${y}%`,
+                left: `${x}%`
+
             }}
         
         />
