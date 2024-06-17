@@ -13,38 +13,77 @@ function Avatar() {
     ]
 
     const [selectedAvatar, setSelectedAvatar] = useState(null)
+    const [teammate, setTeammate] =useState(null)
 
     const handleAvatarChosen = (src) => {
         setSelectedAvatar(src);
+        const filtered_avatars = avatars.filter((avatar) => avatar.src !== src);
+        console.log(filtered_avatars)
+        const teammate = filtered_avatars[(Math.floor(Math.random() * filtered_avatars.length))];
+        console.log(teammate.src)
+        setTeammate(teammate.src);
     }
 
-    return (
-        <div
-            className={'flex flex-col items-center'}
-        >
-
-        <h1>Choose your Avatar!</h1>
-
-        <div className={'flex flex-row flex-wrap'}>
-            {
-                avatars.map((avatar) => (
-                    <ImageOption
-                        key={avatar.src}
-                        src={avatar.src}
-                        onClick={handleAvatarChosen}
-                        isSelected={selectedAvatar === avatar.src}
-                    />))
-            }
-        </div>
-
-
-        <LinkButton
-            to={'game'}
-            text={'Now onto the game!'}
-        />
-
-        </div>
-    );
+    //if user has chosen an avatar, their teammate will show
+    if (teammate) {
+        return (
+            <div
+                className={'flex flex-col items-center'}
+            >
+    
+            <h1>Choose your Avatar!</h1>
+    
+            <div className={'flex flex-row flex-wrap'}>
+                {
+                    avatars.map((avatar) => (
+                        <ImageOption
+                            key={avatar.src}
+                            src={avatar.src}
+                            onClick={handleAvatarChosen}
+                            isSelected={selectedAvatar === avatar.src}
+                        />))
+                }
+            </div>
+    
+            <h2>You are paired with...</h2>
+            
+            <img src={teammate} height={100} width={100} alt="Avatar of random teammate"></img>
+    
+            <LinkButton
+                to={'game'}
+                text={'Now onto the game!'}
+            />
+    
+            </div>
+        );
+    } else {
+        return (
+            <div
+                className={'flex flex-col items-center'}
+            >
+    
+            <h1>Choose your Avatar!</h1>
+    
+            <div className={'flex flex-row flex-wrap'}>
+                {
+                    avatars.map((avatar) => (
+                        <ImageOption
+                            key={avatar.src}
+                            src={avatar.src}
+                            onClick={handleAvatarChosen}
+                            isSelected={selectedAvatar === avatar.src}
+                        />))
+                }
+            </div>
+    
+            <LinkButton
+                to={'game'}
+                text={'Now onto the game!'}
+            />
+    
+            </div>
+        );
+    }
 }
 
 export default Avatar;
