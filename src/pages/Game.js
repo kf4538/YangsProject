@@ -7,17 +7,20 @@ function Game() {
         <div
             className={'flex flex-col items-center'}
         >
+            <LinkButton
+                to={'post-survey'}
+                text={'Now onto the post survey!'}
+                classes={'fixed left-0 top-0 text-center'}
+            />
+
             <div className={'grid grid-cols-3 gap-1 items-center'}>
                 <p className="text-center">Your score: </p>
                 <p className="text-center">Click circle corresponding to: </p>
                 <Timer />
-
             </div>
-            <LinkButton
-                to={'post-survey'}
-                text={'Now onto the post survey!'}
-                classes={'text-center'}
-            />
+            <div>
+                <Circle x={50} y={10} backgroundColor={"red"}/>
+            </div>
         </div>
     );
 }
