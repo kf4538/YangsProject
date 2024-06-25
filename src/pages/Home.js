@@ -46,7 +46,7 @@ function Home() {
                   text={'Begin'}
               />
           </div>
-      <div>
+        </div>
     );
 }
 
