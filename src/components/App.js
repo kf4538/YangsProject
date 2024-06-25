@@ -6,7 +6,6 @@ import PostSurvey from "../pages/PostSurvey";
 import Game from "../pages/Game";
 import Avatar from "../pages/Avatar";
 
-
 function App() {
     const allQuestions = [
         {
