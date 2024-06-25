@@ -1,7 +1,10 @@
 import Home from '../pages/Home';
 
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-
+import PreSurvey from "../pages/PreSurvey";
+import PostSurvey from "../pages/PostSurvey";
+import Game from "../pages/Game";
+import Avatar from "../pages/Avatar";
 
 function App() {
     const allQuestions = [
@@ -45,6 +48,10 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/pre-survey" element={<PreSurvey questions={allQuestions} />} />
+                <Route path="/game" element={<Game />} />
+                <Route path="/post-survey" element={<PostSurvey questions={allQuestions} />} />
+                <Route path="/choose-avatar" element={<Avatar />} />
             </Routes>
         </Router>
     );

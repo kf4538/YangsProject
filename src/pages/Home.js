@@ -1,6 +1,7 @@
 // import './Home.css'
 import { useState } from "react";
 import { useEffect } from "react";
+import LinkButton from "../components/LinkButton";
 
 function Home() {
     const [users, setUsers] = useState([]);
@@ -34,7 +35,18 @@ function Home() {
                     <li key={user.id}>{user.name} - {user.email}</li>
                 ))}
             </ul>
-        </div>
+
+          <div className="flex flex-col items-center ">
+              <h1>Yang's Project</h1>
+              <p>Please participate in this study</p>
+              <h4>Click to begin!</h4>
+
+              <LinkButton
+                  to={'pre-survey'}
+                  text={'Begin'}
+              />
+          </div>
+      <div>
     );
 }
 
